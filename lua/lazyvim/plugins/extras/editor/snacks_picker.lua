@@ -107,32 +107,32 @@ return {
       { "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
     },
   },
-  {
-    "folke/snacks.nvim",
-    opts = function(_, opts)
-      if LazyVim.has("trouble.nvim") then
-        return vim.tbl_deep_extend("force", opts or {}, {
-          picker = {
-            actions = {
-              trouble_open = function(...)
-                return require("trouble.sources.snacks").actions.trouble_open.action(...)
-              end,
-            },
-            win = {
-              input = {
-                keys = {
-                  ["<a-t>"] = {
-                    "trouble_open",
-                    mode = { "n", "i" },
-                  },
-                },
-              },
-            },
-          },
-        })
-      end
-    end,
-  },
+  --{
+  --"folke/snacks.nvim",
+  --opts = function(_, opts)
+  --if LazyVim.has("trouble.nvim") then
+  --return vim.tbl_deep_extend("force", opts or {}, {
+  --picker = {
+  --actions = {
+  --trouble_open = function(...)
+  --return require("trouble.sources.snacks").actions.trouble_open.action(...)
+  --end,
+  --},
+  --win = {
+  --input = {
+  --keys = {
+  --["<a-t>"] = {
+  --"trouble_open",
+  --mode = { "n", "i" },
+  --},
+  --},
+  --},
+  --},
+  --},
+  --})
+  --end
+  --end,
+  --},
   {
     "neovim/nvim-lspconfig",
     opts = function()
@@ -157,17 +157,17 @@ return {
       { "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
     },
   },
-  {
-    "folke/snacks.nvim",
-    opts = function(_, opts)
-      table.insert(opts.dashboard.preset.keys, 3, {
-        icon = " ",
-        key = "p",
-        desc = "Projects",
-        action = ":lua Snacks.picker.projects()",
-      })
-    end,
-  },
+  --{
+  --"folke/snacks.nvim",
+  --opts = function(_, opts)
+  --table.insert(opts.dashboard.preset.keys, 3, {
+  --icon = " ",
+  --key = "p",
+  --desc = "Projects",
+  --action = ":lua Snacks.picker.projects()",
+  --})
+  --end,
+  --},
   {
     "echasnovski/mini.starter",
     optional = true,
