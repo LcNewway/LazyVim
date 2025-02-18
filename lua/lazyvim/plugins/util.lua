@@ -9,10 +9,9 @@ local function term_nav(dir)
 end
 
 return {
-
   -- Snacks utils
   {
-    "folke/snacks.nvim",
+    "snacks.nvim",
     opts = {
       bigfile = { enabled = true },
       quickfile = { enabled = true },
