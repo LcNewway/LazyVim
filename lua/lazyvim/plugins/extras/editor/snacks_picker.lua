@@ -138,12 +138,12 @@ return {
       local Keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- stylua: ignore
       vim.list_extend(Keys, {
-        { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", has = "definition" },
-        { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
-        { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-        { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
-        { "<leader>ss", function() Snacks.picker.lsp_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Symbols", has = "documentSymbol" },
-        { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Workspace Symbols", has = "workspace/symbols" },
+        { "gd", function() Snacks.picker.lsp_definitions() end, desc = "转到定义", has = "definition" },
+        { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "转到引用" },
+        { "gI", function() Snacks.picker.lsp_implementations() end, desc = "转到实现" },
+        { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "转到类型" },
+        --{ "<leader>ss", function() Snacks.picker.lsp_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Symbols", has = "documentSymbol" },
+        --{ "<leader>sS", function() Snacks.picker.lsp_workspace_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Workspace Symbols", has = "workspace/symbols" },
       })
     end,
   },
@@ -181,24 +181,24 @@ return {
       vim.list_extend(opts.items, items)
     end,
   },
-  {
-    "nvimdev/dashboard-nvim",
-    optional = true,
-    opts = function(_, opts)
-      if not vim.tbl_get(opts, "config", "center") then
-        return
-      end
-      local projects = {
-        action = "lua Snacks.picker.projects()",
-        desc = " Projects",
-        icon = " ",
-        key = "p",
-      }
-
-      projects.desc = projects.desc .. string.rep(" ", 43 - #projects.desc)
-      projects.key_format = "  %s"
-
-      table.insert(opts.config.center, 3, projects)
-    end,
-  },
+  --{
+  --"nvimdev/dashboard-nvim",
+  --optional = true,
+  --opts = function(_, opts)
+  --if not vim.tbl_get(opts, "config", "center") then
+  --return
+  --end
+  --local projects = {
+  --action = "lua Snacks.picker.projects()",
+  --desc = " Projects",
+  --icon = " ",
+  --key = "p",
+  --}
+  --
+  --projects.desc = projects.desc .. string.rep(" ", 43 - #projects.desc)
+  --projects.key_format = "  %s"
+  --
+  --table.insert(opts.config.center, 3, projects)
+  --end,
+  --},
 }
