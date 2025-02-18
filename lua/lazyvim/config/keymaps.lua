@@ -13,3 +13,9 @@ map("i", "jk", "<ESC>", { desc = "退出到普通模式" })
 map("i", "jj", "<ESC>", { desc = "退出到普通模式" })
 map("c", "jk", "<ESC>", { desc = "退出到普通模式" })
 map("c", "jj", "<ESC>", { desc = "退出到普通模式" })
+
+-- 使用Ctrl+hjkl进行窗口焦点移动
+map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
