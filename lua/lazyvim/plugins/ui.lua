@@ -10,6 +10,13 @@ return {
       { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "删除未固定Buffer" },
       { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "删除右侧Buffer" },
       { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "删除右侧Buffer" },
+      {
+        "<leader>be",
+        function()
+          Snacks.picker.buffers()
+        end,
+        desc = "浏览Buffers",
+      },
       { "E", "<cmd>BufferLineCyclePrev<cr>", desc = "前一个Buffer" },
       { "R", "<cmd>BufferLineCycleNext<cr>", desc = "后一个Buffer" },
       {

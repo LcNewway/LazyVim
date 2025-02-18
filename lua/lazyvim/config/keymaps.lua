@@ -19,3 +19,22 @@ map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+
+-- lazygit
+if vim.fn.executable("lazygit") == 1 then
+  map("n", "<leader>gg", function()
+    Snacks.lazygit({ cwd = LazyVim.root.git() })
+  end, { desc = "LazyGit (根目录)" })
+  map("n", "<leader>gG", function()
+    Snacks.lazygit()
+  end, { desc = "LazyGit" })
+  map("n", "<leader>gf", function()
+    Snacks.picker.git_log_file()
+  end, { desc = "Git文件历史" })
+  map("n", "<leader>gl", function()
+    Snacks.picker.git_log({ cwd = LazyVim.root.git() })
+  end, { desc = "Git日志查看 (根目录)" })
+  map("n", "<leader>gL", function()
+    Snacks.picker.git_log()
+  end, { desc = "Git日志查看" })
+end
