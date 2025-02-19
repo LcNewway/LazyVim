@@ -59,7 +59,7 @@ return {
       { "<leader>/", LazyVim.pick("grep"), desc = "查找文本 (根目录)" },
       { "<leader>:", function() Snacks.picker.command_history() end, desc = "命令历史" },
       { "<leader><space>", LazyVim.pick("files"), desc = "查找文件 (根目录)" },
-      --{ "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" }, --Lance: 不生效
+      { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" }, --Lance: 不生效
       -- find
       --{ "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" }, --Lance: 使用<leader>be代替
       --{ "<leader>fB", function() Snacks.picker.buffers({ hidden = true, nofile = true }) end, desc = "Buffers (all)" }, --Lance: 不经常使用
