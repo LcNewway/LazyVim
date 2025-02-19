@@ -88,7 +88,7 @@ return {
           --  end,
           --},
           -- better descriptions
-          { "gx", desc = "Open with system app" },
+          --{ "gx", desc = "Open with system app" },
         },
       },
     },
