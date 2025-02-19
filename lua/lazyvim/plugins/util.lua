@@ -47,7 +47,7 @@ return {
       { "<leader>qS", function() require("persistence").select() end,desc = "选择会话" },
       { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "还原最近会话" },
       { "<leader>qd", function() require("persistence").stop() end, desc = "不保存当前会话" },
-      { "<leader>qq", "<cmd>qa!", desc = "不保存退出" },
+      { "<leader>qq", "<cmd>qa!<CR>", desc = "不保存退出" },
     },
   },
 
