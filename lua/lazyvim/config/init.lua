@@ -5,7 +5,6 @@ local M = {}
 
 M.version = "14.14.0" -- x-release-please-version
 LazyVim.config = M
-
 ---@class LazyVimOptions
 local defaults = {
   -- colorscheme can be a string like `catppuccin` or a function that will load the colorscheme
@@ -16,7 +15,7 @@ local defaults = {
   -- load the default settings
   defaults = {
     autocmds = true, -- lazyvim.config.autocmds
-    keymaps = true,  -- lazyvim.config.keymaps
+    keymaps = true, -- lazyvim.config.keymaps
     -- lazyvim.config.options can't be configured here since that's loaded before lazyvim setup
     -- if you want to disable loading options, add `package.loaded["lazyvim.config.options"] = true` to the top of your init.lua
   },
@@ -348,16 +347,16 @@ function M.get_defaults()
   ---@type table<string, LazyVimDefault[]>
   local checks = {
     picker = {
-      { name = "snacks",    extra = "editor.snacks_picker" },
-      { name = "fzf",       extra = "editor.fzf" },
+      { name = "snacks", extra = "editor.snacks_picker" },
+      { name = "fzf", extra = "editor.fzf" },
       { name = "telescope", extra = "editor.telescope" },
     },
     cmp = {
-      { name = "blink.cmp", extra = "coding.blink",   enabled = vim.fn.has("nvim-0.10") == 1 },
-      { name = "nvim-cmp",  extra = "coding.nvim-cmp" },
+      { name = "blink.cmp", extra = "coding.blink", enabled = vim.fn.has("nvim-0.10") == 1 },
+      { name = "nvim-cmp", extra = "coding.nvim-cmp" },
     },
     explorer = {
-      { name = "snacks",   extra = "editor.snacks_explorer" },
+      { name = "snacks", extra = "editor.snacks_explorer" },
       { name = "neo-tree", extra = "editor.neo-tree" },
     },
   }

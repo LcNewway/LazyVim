@@ -25,12 +25,12 @@ return {
     cmd = "ConformInfo",
     keys = {
       {
-        "<leader>cF",
+        "<leader>cf",
         function()
           require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
         end,
         mode = { "n", "v" },
-        desc = "Format Injected Langs",
+        desc = "格式化注入语言",
       },
     },
     init = function()

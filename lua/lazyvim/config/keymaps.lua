@@ -1,5 +1,4 @@
 -- This file is automatically loaded by lazyvim.config.init
-
 -- DO NOT USE `LazyVim.safe_keymap_set` IN YOUR OWN CONFIG!!
 -- use `vim.keymap.set` instead
 local map = LazyVim.safe_keymap_set
@@ -15,10 +14,10 @@ map("c", "jk", "<ESC>", { desc = "退出到普通模式" })
 map("c", "jj", "<ESC>", { desc = "退出到普通模式" })
 
 -- 使用Ctrl+hjkl进行窗口焦点移动
-map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+map("n", "<C-h>", "<C-w>h", { desc = "转到左侧窗口", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "转到下方窗口", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "转到上方窗口", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "转到右侧窗口", remap = true })
 
 -- lazygit
 if vim.fn.executable("lazygit") == 1 then

@@ -41,6 +41,7 @@ return {
       ensure_installed = {
         "bash",
         "c",
+        "c_sharp",
         "diff",
         "html",
         "javascript",
@@ -56,6 +57,7 @@ return {
         "python",
         "query",
         "regex",
+        "sql",
         "toml",
         "tsx",
         "typescript",
@@ -67,10 +69,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
+          init_selection = "<CR>",
+          node_incremental = "<CR>",
+          scope_incremental = "<TAB>",
+          node_decremental = "<BS>",
         },
       },
       textobjects = {
