@@ -33,6 +33,11 @@ return {
         end,
         desc = "删除其他Buffer",
       },
+      {
+        "<leader>bs",
+        "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+        desc = "切换Buffer",
+      },
     },
     opts = {
       options = {

@@ -100,7 +100,7 @@ return {
       { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "查找键盘映射" },
       --{ "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" }, --Lance:不清楚具体效果
       { "<leader>sM", function() Snacks.picker.man() end, desc = "查找Man页面" },
-      { "<leader>sm", function() Snacks.picker.marks() end, desc = "查找Marks标签" },
+      { "<leader>sm", function() Snacks.picker.marks() end, desc = "查找Marks标识" },
       { "<leader>sR", function() Snacks.picker.resume() end, desc = "查找摘要" },
       --{ "<leader>sq", function() Snacks.picker.qflist() end, desc = "查找修复列表" }, --Lance:不清楚具体效果
       { "<leader>su", function() Snacks.picker.undo() end, desc = "查找回退历史" },
@@ -154,8 +154,8 @@ return {
     optional = true,
     -- stylua: ignore
     keys = {
-      { "<leader>st", function() Snacks.picker.todo_comments() end, desc = "Todo" },
-      { "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" },
+      { "<leader>st", function() Snacks.picker.todo_comments() end, desc = "查找标签" },
+      --{ "<leader>sT", function () Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } }) end, desc = "Todo/Fix/Fixme" }, --Lance:不经常使用
     },
   },
   --{

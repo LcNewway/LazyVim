@@ -5,20 +5,18 @@ return {
   opts = { explorer = {} },
   keys = {
     {
-      "<leader>fe",
+      "<leader>e",
       function()
         Snacks.explorer({ cwd = LazyVim.root() })
       end,
       desc = "资源浏览 (根目录)",
     },
     {
-      "<leader>fE",
+      "<leader>E",
       function()
         Snacks.explorer()
       end,
       desc = "资源浏览",
     },
-    { "<leader>e", "<leader>fe", desc = "资源浏览 (根目录)", remap = true },
-    { "<leader>E", "<leader>fE", desc = "资源浏览", remap = true },
   },
 }
