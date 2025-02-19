@@ -6,7 +6,7 @@ return {
     event = "VeryLazy",
     keys = {
       --Lance: 变更键盘映射
-      { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "固定Buffer" },
+      { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "固定/取消Buffer" },
       { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "删除未固定Buffer" },
       { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "删除右侧Buffer" },
       { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "删除右侧Buffer" },
@@ -305,17 +305,17 @@ return {
       toggle = { map = LazyVim.safe_keymap_set },
       words = { enabled = true },
     },
-    -- stylua: ignore
-    keys = {
-      { "<leader>n", function()
-        if Snacks.config.picker and Snacks.config.picker.enabled then
-          Snacks.picker.notifications()
-        else
-          Snacks.notifier.show_history()
-        end
-      end, desc = "Notification History" },
-      { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-    },
+    -- Lance: 不经常使用
+    --keys = {
+    --{ "<leader>n", function()
+    --if Snacks.config.picker and Snacks.config.picker.enabled then
+    --Snacks.picker.notifications()
+    --else
+    --Snacks.notifier.show_history()
+    --end
+    --end, desc = "Notification History" },
+    --{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+    --},
   },
 
   {
