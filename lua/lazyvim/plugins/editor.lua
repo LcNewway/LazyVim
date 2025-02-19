@@ -65,11 +65,11 @@ return {
           { "<leader>q", group = "+ 会话", icon = { icon = " ", color = "green" } },
           { "<leader>s", group = "+ 搜索", icon = { icon = " ", color = "green" } },
           --{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
-          { "<leader>x", group = "+ 诊断/修复", icon = { icon = "󱖫 ", color = "green" } },
-          { "[", group = "prev" },
-          { "]", group = "next" },
-          { "g", group = "goto" },
-          { "gs", group = "surround" },
+          --{ "<leader>x", group = "+ 诊断/修复", icon = { icon = "󱖫 ", color = "green" } },
+          { "[", group = "上一个" },
+          { "]", group = "下一个" },
+          { "g", group = "转到" },
+          --{ "gs", group = "surround" },
           { "z", group = "fold" },
           {
             "<leader>b",
@@ -92,6 +92,7 @@ return {
         },
       },
     },
+    --Lance: 不经常使用
     --keys = {
     --{
     --"<leader>?",
@@ -154,16 +155,16 @@ return {
           else
             gs.nav_hunk("next")
           end
-        end, "Next Hunk")
+        end, "下一个变更点")
         map("n", "[h", function()
           if vim.wo.diff then
             vim.cmd.normal({ "[c", bang = true })
           else
             gs.nav_hunk("prev")
           end
-        end, "Prev Hunk")
-        map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
-        map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
+        end, "上一个变更点")
+        map("n", "]H", function() gs.nav_hunk("last") end, "末一个变更点")
+        map("n", "[H", function() gs.nav_hunk("first") end, "首一个变更点")
         --map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
         --map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         --map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
@@ -205,8 +206,8 @@ return {
       },
     },
     keys = {
-      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "诊断 (Trouble)" },
       --Lance: 不使用
+      --{ "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "诊断 (Trouble)" },
       --{ "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
       --{ "<leader>cs", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols (Trouble)" },
       --{ "<leader>cS", "<cmd>Trouble lsp toggle<cr>", desc = "LSP references/definitions/... (Trouble)" },
@@ -224,7 +225,7 @@ return {
             end
           end
         end,
-        desc = "Previous Trouble/Quickfix Item",
+        desc = "上一个修复点",
       },
       {
         "]q",
@@ -238,7 +239,7 @@ return {
             end
           end
         end,
-        desc = "Next Trouble/Quickfix Item",
+        desc = "下一个修复点",
       },
     },
   },
@@ -252,9 +253,9 @@ return {
     opts = {},
     -- stylua: ignore
     keys = {
-      { "]t", function() require("todo-comments").jump_next() end, desc = "Next Todo Comment" },
-      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous Todo Comment" },
-      { "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "列出标签 (Trouble)" },
+      { "]t", function() require("todo-comments").jump_next() end, desc = "转到下一标签" },
+      { "[t", function() require("todo-comments").jump_prev() end, desc = "转到上一标签" },
+      --{ "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "列出标签 (Trouble)" },
       --{ "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
       { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "查找标签" },
       --{ "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
