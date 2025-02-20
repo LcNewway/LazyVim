@@ -261,4 +261,7 @@ return {
       --{ "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
     },
   },
+  {
+    "phaazon/hop.nvim",
+  },
 }
