@@ -48,7 +48,7 @@ vim.g.deprecation_warnings = false
 -- Show the current document symbols location from Trouble in lualine
 -- You can disable this for a buffer by setting `vim.b.trouble_lualine = false`
 vim.g.trouble_lualine = true
-vim.g.minianimate_disable = true
+vim.g.minianimate_disable = false
 
 local opt = vim.opt
 
