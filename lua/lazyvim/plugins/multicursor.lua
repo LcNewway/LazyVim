@@ -33,7 +33,7 @@ return {
     set({ "n", "x" }, "<leader>ml", mc.prevCursor, { desc = "跳转到下一光标" })
     set({ "n", "x" }, "<leader>md", mc.deleteCursor, { desc = "删除当前光标" })
     set({ "n", "x" }, "<leader>mD", mc.toggleCursor, { desc = "跳出光标选择" })
-    set({ "n", "x" }, "<leader>mc", mc.operator, { desc = "设置/取消当前光标选择" })
+    set({ "n", "x" }, "<leader>mc", mc.matchCursors, { desc = "设置/取消当前光标选择" })
 
     -- Lance: 使用Ctrl+鼠标操作多光标
     set("n", "<c-leftmouse>", mc.handleMouse)
