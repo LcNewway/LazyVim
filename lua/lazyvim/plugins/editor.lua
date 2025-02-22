@@ -62,6 +62,7 @@ return {
           { "<leader>g", group = "+ 仓库", icon = { icon = " ", color = "green" } },
           --{ "<leader>gh", group = "hunks" },
           { "<leader>n", group = "+ 通知", icon = { icon = " ", color = "green" } },
+          { "<leader>m", group = "+ 光标", icon = { icon = "󱄧 ", color = "green" } },
           { "<leader>q", group = "+ 会话", icon = { icon = " ", color = "green" } },
           { "<leader>s", group = "+ 搜索", icon = { icon = " ", color = "green" } },
           --{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
