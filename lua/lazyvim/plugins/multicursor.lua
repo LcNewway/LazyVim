@@ -5,47 +5,35 @@ return {
     local mc = require("multicursor-nvim")
     mc.setup()
     local set = vim.keymap.set
-    -- Lance: 在上方增加光标
     set({ "n", "x" }, "<leader>mk", function()
       mc.lineAddCursor(-1)
     end, { desc = "在上方增加光标" })
-    -- Lance: 在下方增加光标
     set({ "n", "x" }, "<leader>mj", function()
       mc.lineAddCursor(1)
     end, { desc = "在下方增加光标" })
-    -- Lance: 跳过在上方增加光标
     set({ "n", "x" }, "<leader>mK", function()
       mc.lineSkipCursor(-1)
-    end)
-    -- Lance: 跳过在下方增加光标
+    end, { desc = "跳过在上方增加光标" })
     set({ "n", "x" }, "<leader>mJ", function()
       mc.lineSkipCursor(1)
-    end)
-    -- Lance: 在下一个匹配单词增加光标
+    end, { desc = "跳过在下方增加光标" })
     set({ "n", "x" }, "<leader>mn", function()
       mc.matchAddCursor(1)
-    end)
-    -- Lance: 在上一个匹配单词增加光标
+    end, { desc = "在下一个匹配单词增加光标" })
     set({ "n", "x" }, "<leader>mp", function()
       mc.matchAddCursor(1)
-    end)
-    -- Lance: 跳过下一个匹配单词增加光标
+    end, { desc = "在上一个匹配单词增加光标" })
     set({ "n", "x" }, "<leader>mN", function()
       mc.matchSkipCursor(1)
-    end)
-    -- Lance: 跳过上一个匹配单词增加光标
+    end, { desc = "跳过下一个匹配单词增加光标" })
     set({ "n", "x" }, "<leader>mP", function()
       mc.matchSkipCursor(1)
-    end)
-    -- Lance: 跳转到上一光标
-    set({ "n", "x" }, "<leader>mh", mc.nextCursor)
-    -- Lance: 跳转到下一光标
-    set({ "n", "x" }, "<leader>ml", mc.prevCursor)
-    -- Lance: 删除当前光标
-    set({ "n", "x" }, "<leader>md", mc.deleteCursor)
-    -- Lance: 跳出光标选择
-    set({ "n", "x" }, "<leader>mD", mc.toggleCursor)
-    set({ "n", "x" }, "<leader>mm", mc.operator)
+    end, { desc = "跳过上一个匹配单词增加光标" })
+    set({ "n", "x" }, "<leader>mh", mc.nextCursor, { desc = "跳转到上一光标" })
+    set({ "n", "x" }, "<leader>ml", mc.prevCursor, { desc = "跳转到下一光标" })
+    set({ "n", "x" }, "<leader>md", mc.deleteCursor, { desc = "删除当前光标" })
+    set({ "n", "x" }, "<leader>mD", mc.toggleCursor, { desc = "跳出光标选择" })
+    set({ "n", "x" }, "<leader>mm", mc.operator, { desc = "设置/取消当前光标选择" })
 
     -- Lance: 使用Ctrl+鼠标操作多光标
     set("n", "<c-leftmouse>", mc.handleMouse)
