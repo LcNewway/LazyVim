@@ -3,39 +3,33 @@ return {
   branch = "1.0",
   config = function()
     local mc = require("multicursor-nvim")
-
     mc.setup()
-
     local set = vim.keymap.set
-
     -- Add or skip cursor above/below the main cursor.
     set({ "n", "x" }, "<up>", function()
-      mc.lineAddCursor(-1)
+      mc.lineAddCursor(-1) --在上方增加光标
     end)
     set({ "n", "x" }, "<down>", function()
-      mc.lineAddCursor(1)
+      mc.lineAddCursor(1) --在下方增加光标
     end)
     set({ "n", "x" }, "<leader><up>", function()
-      mc.lineSkipCursor(-1)
+      mc.lineSkipCursor(-1) --跳过上方增加光标
     end)
     set({ "n", "x" }, "<leader><down>", function()
-      mc.lineSkipCursor(1)
+      mc.lineSkipCursor(1) --跳过下方增加光标
     end)
-
-    -- Add or skip adding a new cursor by matching word/selection
     set({ "n", "x" }, "<leader>n", function()
-      mc.matchAddCursor(1)
+      mc.matchAddCursor(1) --在下一个匹配单词增加光标
     end)
     set({ "n", "x" }, "<leader>s", function()
-      mc.matchSkipCursor(1)
+      mc.matchSkipCursor(1) --跳过下一个匹配单词增加光标
     end)
     set({ "n", "x" }, "<leader>N", function()
-      mc.matchAddCursor(-1)
+      mc.matchAddCursor(-1) --在上一个匹配单词增加光标
     end)
     set({ "n", "x" }, "<leader>S", function()
-      mc.matchSkipCursor(-1)
+      mc.matchSkipCursor(-1) --跳过上一个匹配单词增加光标
     end)
-
     -- In normal/visual mode, press `mwap` will create a cursor in every match of
     -- the word captured by `iw` (or visually selected range) inside the bigger
     -- range specified by `ap`. Useful to replace a word inside a function, e.g. mwif.
@@ -45,13 +39,10 @@ return {
       -- basically every char in a `{ a, b, c, d }`.
       -- mc.operator({ pattern = [[\<\w]] })
     end)
-
     -- Press `mWi"ap` will create a cursor in every match of string captured by `i"` inside range `ap`.
     set("n", "mW", mc.operator)
-
     -- Add all matches in the document
     set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
-
     -- You can also add cursors with any motion you prefer:
     -- set("n", "<right>", function()
     --     mc.addCursor("w")
@@ -59,25 +50,19 @@ return {
     -- set("n", "<leader><right>", function()
     --     mc.skipCursor("w")
     -- end)
-
     -- Rotate the main cursor.
     set({ "n", "x" }, "<left>", mc.nextCursor)
     set({ "n", "x" }, "<right>", mc.prevCursor)
-
     -- Delete the main cursor.
     set({ "n", "x" }, "<leader>x", mc.deleteCursor)
-
     -- Add and remove cursors with control + left click.
     set("n", "<c-leftmouse>", mc.handleMouse)
     set("n", "<c-leftdrag>", mc.handleMouseDrag)
     set("n", "<c-leftrelease>", mc.handleMouseRelease)
-
     -- Easy way to add and remove cursors using the main cursor.
     set({ "n", "x" }, "<c-q>", mc.toggleCursor)
-
     -- Clone every cursor and disable the originals.
     set({ "n", "x" }, "<leader><c-q>", mc.duplicateCursors)
-
     set("n", "<esc>", function()
       if not mc.cursorsEnabled() then
         mc.enableCursors()
@@ -87,7 +72,6 @@ return {
         -- Default <esc> handler.
       end
     end)
-
     -- bring back cursors if you accidentally clear them
     set("n", "<leader>gv", mc.restoreCursors)
 
