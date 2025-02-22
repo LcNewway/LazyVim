@@ -7,7 +7,7 @@ return {
     local set = vim.keymap.set
     set({ "n", "x" }, "<leader>mm", function()
       mc.addCursor()
-    end)
+    end, { desc = "在当前位置标记光标" })
     set({ "n", "x" }, "<leader>mk", function()
       mc.lineAddCursor(-1)
     end, { desc = "在上方增加光标" })
