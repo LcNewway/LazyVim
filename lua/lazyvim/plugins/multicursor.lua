@@ -33,12 +33,21 @@ return {
     set({ "n", "x" }, "<leader>ml", mc.prevCursor, { desc = "跳转到下一光标" })
     set({ "n", "x" }, "<leader>md", mc.deleteCursor, { desc = "删除当前光标" })
     set({ "n", "x" }, "<leader>mD", mc.toggleCursor, { desc = "跳出光标选择" })
-    set({ "n", "x" }, "<leader>mm", mc.operator, { desc = "设置/取消当前光标选择" })
+    set({ "n", "x" }, "<leader>mc", mc.operator, { desc = "设置/取消当前光标选择" })
 
     -- Lance: 使用Ctrl+鼠标操作多光标
     set("n", "<c-leftmouse>", mc.handleMouse)
     set("n", "<c-leftdrag>", mc.handleMouseDrag)
     set("n", "<c-leftrelease>", mc.handleMouseRelease)
+    set("n", "<esc>", function()
+      if not mc.cursorsEnabled() then
+        mc.enableCursors()
+      elseif mc.hasCursors() then
+        mc.clearCursors()
+      else
+        -- Default <esc> handler.
+      end
+    end)
 
     -- -- In normal/visual mode, press `mwap` will create a cursor in every match of
     -- -- the word captured by `iw` (or visually selected range) inside the bigger
@@ -54,15 +63,6 @@ return {
     -- -- Add all matches in the document
     -- set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors) --匹配所有增加光标
     -- -- Clone every cursor and disable the originals.
-    -- set("n", "<esc>", function()
-    --   if not mc.cursorsEnabled() then
-    --     mc.enableCursors()
-    --   elseif mc.hasCursors() then
-    --     mc.clearCursors()
-    --   else
-    --     -- Default <esc> handler.
-    --   end
-    -- end)
     -- -- bring back cursors if you accidentally clear them
     -- set("n", "<leader>gv", mc.restoreCursors)
     --
