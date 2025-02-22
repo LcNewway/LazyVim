@@ -8,11 +8,11 @@ return {
     -- Lance: 在上方增加光标
     set({ "n", "x" }, "<leader>mk", function()
       mc.lineAddCursor(-1)
-    end)
+    end, { desc = "在上方增加光标" })
     -- Lance: 在下方增加光标
     set({ "n", "x" }, "<leader>mj", function()
       mc.lineAddCursor(1)
-    end)
+    end, { desc = "在下方增加光标" })
     -- Lance: 跳过在上方增加光标
     set({ "n", "x" }, "<leader>mK", function()
       mc.lineSkipCursor(-1)
