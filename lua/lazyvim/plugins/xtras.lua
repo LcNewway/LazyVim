@@ -11,7 +11,6 @@ local prios = {
   -- default priority is 50
   ["lazyvim.plugins.extras.editor.aerial"] = 100,
   ["lazyvim.plugins.extras.editor.outline"] = 100,
-  ["lazyvim.plugins.extras.editor.multicursor"] = 100,
   ["lazyvim.plugins.extras.ui.alpha"] = 19,
   ["lazyvim.plugins.extras.ui.dashboard-nvim"] = 19,
   ["lazyvim.plugins.extras.ui.mini-starter"] = 19,
@@ -44,14 +43,13 @@ end
 extras = LazyVim.dedup(extras)
 
 local version = vim.version()
-local v = version.major .. "_" .. version.minor
-
-local compat = { "0_9" }
+-- local v = version.major .. "_" .. version.minor
+-- local compat = { "0_9" }
 
 LazyVim.plugin.save_core()
-if vim.tbl_contains(compat, v) then
-  table.insert(extras, 1, "lazyvim.plugins.compat.nvim-" .. v)
-end
+-- if vim.tbl_contains(compat, v) then
+--   table.insert(extras, 1, "lazyvim.plugins.compat.nvim-" .. v)
+-- end
 if vim.g.vscode then
   table.insert(extras, 1, "lazyvim.plugins.extras.vscode")
 end
