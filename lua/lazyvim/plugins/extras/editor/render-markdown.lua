@@ -5,5 +5,10 @@ return {
   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
-  opts = { heading = { position = "inline" }, sign = { enabled = false }, code = { sign = false } },
+  opts = {
+    heading = { position = "inline" },
+    sign = { enabled = false },
+    code = { sign = false },
+    render_modes = { "n", "c", "t" },
+  },
 }
