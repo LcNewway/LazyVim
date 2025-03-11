@@ -13,7 +13,7 @@ return {
       -- and there are more closing pairs than opening pairs
       skip_unbalanced = true,
       -- better deal with markdown code blocks
-      markdown = true,
+      markdown = false,
     },
     config = function(_, opts)
       LazyVim.mini.pairs(opts)
