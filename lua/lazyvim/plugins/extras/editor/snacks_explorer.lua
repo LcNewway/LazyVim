@@ -2,7 +2,7 @@ return {
   desc = "Snacks File Explorer",
   recommended = true,
   "folke/snacks.nvim",
-  opts = { explorer = {}, image = {} },
+  opts = { explorer = {}, image = {}, animate = { enable = true } },
   keys = {
     {
       "<leader>e",
