@@ -15,6 +15,8 @@ return {
     opts = {
       bigfile = { enabled = true },
       quickfile = { enabled = true },
+      image = { enabled = true },
+      animate = { enabled = true },
       terminal = {
         win = {
           keys = {
